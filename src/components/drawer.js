@@ -1,7 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 
 export default function Drawer() {
+  const location = useLocation();
   return (
     <div>
       <div>
@@ -44,8 +46,12 @@ export default function Drawer() {
               <ul className="mb-8 text-sm font-medium w-full">
                 <li>
                   <Link
-                    className="flex items-center pl-3 py-3 pr-4 text-white bg-indigo-500 rounded"
-                    to="/"
+                    className={`flex items-center hover:text-gray-500 hover:bg-indigo-50  pl-3 py-3 pr-4  rounded ${
+                      location.pathname.match("/dashboard")
+                        ? "bg-indigo-500 text-white"
+                        : "text-gray-500"
+                    }`}
+                    to="/dashboard"
                   >
                     <span className="inline-block mr-3">
                       <svg
@@ -65,7 +71,13 @@ export default function Drawer() {
                 </li>
                 <li>
                   <Link
-                    className="flex items-center pl-3 py-3 pr-2 text-gray-500 hover:bg-indigo-50 rounded"
+                    className={`
+                    flex items-center pl-3 py-3 pr-2 hover:text-gray-500 hover:bg-indigo-50 rounded ${
+                      location.pathname.match("/orders")
+                        ? "bg-indigo-500 text-white"
+                        : "text-gray-500 "
+                    }
+                    `}
                     to="/orders"
                   >
                     <span className="inline-block mr-3">
@@ -86,7 +98,12 @@ export default function Drawer() {
                 </li>
                 <li>
                   <Link
-                    className="flex items-center pl-3 py-3 pr-4 text-gray-500 hover:bg-indigo-50 rounded"
+                    className={`
+                    flex items-center pl-3 py-3 pr-4 hover:text-gray-500 hover:bg-indigo-50 rounded ${
+                      location.pathname.match("/products")
+                        ? "bg-indigo-500 text-white"
+                        : "text-gray-500 "
+                    }`}
                     to="/products"
                   >
                     <span className="inline-block mr-3">
@@ -107,7 +124,11 @@ export default function Drawer() {
                 </li>
                 <li>
                   <Link
-                    className="flex items-center pl-3 py-3 pr-4 text-gray-500 hover:bg-indigo-50 rounded"
+                    className={`flex items-center pl-3 py-3 pr-4 hover:text-gray-500 hover:bg-indigo-50 rounded ${
+                      location.pathname.match("/customers")
+                        ? "bg-indigo-500 text-white"
+                        : "text-gray-500 "
+                    }`}
                     to="/customers"
                   >
                     <span className="inline-block mr-3">

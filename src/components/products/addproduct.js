@@ -109,11 +109,16 @@ export default function Addproduct() {
           </div>
           <div className="flex flex-col text-gray-500 font-semibold">
             <span>Category</span>
-            <input
+            <select name="" id="" className="p-2 bg-gray-100 rounded">
+              <option value="phone">Phone</option>
+              <option value="food">Food</option>
+              <option value="cloth">Cloth</option>
+            </select>
+            {/* <input
               className="border p-2 rounded"
               type="text"
               placeholder="enter product category"
-            />
+            /> */}
           </div>
           <div className="flex flex-col text-gray-500 font-semibold">
             <span>Price</span>
